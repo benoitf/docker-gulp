@@ -7,11 +7,13 @@ MAINTAINER Florent Benoit
 ENV HOME /root
 WORKDIR /root
 
-
+# git is reuired by bower
 # ruby is required for compass / sass
 # unzip is required for unzipping application
 # software-properties is used for add-apt-repository command
 # python-software-properties is used for nodejs
+RUN apt-get update
+RUN apt-get -y dist-upgrade
 RUN apt-get install -y software-properties-common python-software-properties unzip git ruby-full rubygems1.8
 RUN add-apt-repository -y ppa:chris-lea/node.js
 RUN apt-get update
