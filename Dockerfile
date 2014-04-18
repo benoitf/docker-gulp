@@ -23,8 +23,8 @@ RUN apt-get install -y nodejs
 RUN gem install sass
 RUN gem install compass
 
-# Install gulp
-RUN npm install -g gulp
+# Install gulp and bower
+RUN npm install -g gulp bower
 
 # Add a user
 RUN adduser --disabled-password --home=/home/user --gecos "" user
