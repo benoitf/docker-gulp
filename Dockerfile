@@ -29,6 +29,9 @@ RUN npm install -g gulp bower
 # Add a user
 RUN adduser --disabled-password --home=/home/user --gecos "" user
 
+# Application will listen on 5000 port number
+EXPOSE 5000
+
 # Run all operations in user mode
 USER user
 ENV HOME /home/user
@@ -49,9 +52,6 @@ WORKDIR /home/user
 
 # Download bower dependencies
 #RUN [ -e /home/user/application/app/bower_components ] || bower install
-
-# Application will listen on 5000 port number
-#EXPOSE 5000
 
 
 #CMD gulp serve:app
